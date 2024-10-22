@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+<% if (product) { %>
+<%= product.name %>
+<% } else { %>
+Search Results
+<% } %>
+</title>
+<link href="(link unavailable)" rel="stylesheet">
+</head>
+<body>
+<header>
+<%- include('partials/header') %>
+</header>
+<main class="container mt-4">
+<% if (product) { %>
+<h1><%= product.name %></h1>
+<img src="<%= product.image_url %>" class="img-fluid" alt="<%= product.name %>">
+<p><strong>Price: $<%= Number(product.price).toFixed(2) %></strong></p>
+<p><%= product.description %></p>
+<a href="/search" class="btn btn-secondary">Back to Search</a>
+<% } else if (results && results.length > 0) { %>
+<h1>Search Results</h1>
+<ul>
+<% results.forEach((result) => { %>
+<li>
+<a href="/product/<%= result.id %>">
+<%= result.name %>
+</a>
+</li>
+<% }); %>
+</ul>
+<% } else { %>
+<h1>No Results Found</h1>
+<p>No products found matching your search for "<%= query %>."</p>
+<a href="/search" class="btn btn-secondary">Try Again</a>
+<% } %>
+</main>
+<%- include('partials/footer') %>
+</body>
+</html>
