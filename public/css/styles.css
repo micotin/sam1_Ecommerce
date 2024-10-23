@@ -1,0 +1,413 @@
+/* General styles */
+body {
+    background-color: #fffaf0; /* Light floral background */
+    font-family: 'Montserrat', sans-serif; /* Updated font for consistency */
+}
+
+/* Header Styles */
+header {
+    background-color: #ff6f61; /* Soft coral background for the header */
+    padding: 10px 0; /* Thinner padding for the header */
+}
+
+.navbar {
+    background-color: transparent;
+}
+
+.navbar-brand {
+    font-size: 1.5rem; /* Reduced size to fit all elements */
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+}
+
+.navbar-toggler {
+    border-color: white;
+}
+
+.navbar-toggler-icon {
+    background-color: white;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: white;
+    font-weight: 500;
+    padding: 10px 15px; /* Adjusted padding for a more compact navbar */
+    text-transform: uppercase;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Transition for color and background */
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #fffbe6; /* Light cream on hover */
+    background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+    border-radius: 5px; /* Rounded corners for hover effect */
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form .form-control {
+    border-radius: 30px;
+    padding: 8px 15px; /* Adjusted padding for a more compact look */
+}
+
+.search-form .btn-search {
+    background-color: white;
+    border: none;
+    border-radius: 30px;
+    color: #ff6f61;
+    padding: 8px 15px; /* Adjusted padding for a more compact look */
+    font-weight: bold;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.search-form .btn-search:hover {
+    background-color: #ff3b3b;
+    color: white;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('/images/hero-background.jpg'); /* Floral background image */
+    background-size: cover;
+    background-position: center;
+    color: #333; /* Changed white to dark grey for better readability */
+    padding: 100px 0;
+    text-shadow: none; /* Removed the text-shadow */
+}
+
+.hero-content h1 span {
+    color: #ff6f61; /* Soft coral for highlighting */
+}
+
+/* Product Section */
+.product-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.product-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ff6f61;
+    margin-bottom: 40px;
+}
+
+/* Featured Products */
+.featured-products .card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+    transition: transform 0.3s ease-in-out;
+}
+
+.featured-products .card:hover {
+    transform: scale(1.05); /* Hover effect to enlarge product */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover; /* Ensures full image is displayed */
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 15px;
+}
+
+.product-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+.product-card button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.product-card button:hover {
+    background-color: #e6554f;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: #f9f4f2; /* Light floral background */
+    padding: 40px 0;
+}
+
+.testimonial {
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ff6f61;
+    margin-bottom: 40px;
+}
+
+/* Visit Us Section */
+.visit-us {
+    background-color: #fffaf0;
+    padding: 50px 0;
+}
+
+.visit-us .section-title {
+    color: #ff6f61; /* Changed from white to coral */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #f8f9fa;
+    padding-top: 40px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.footer-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #ff6f61;
+}
+
+.footer-description {
+    color: #555;
+}
+
+.footer-link {
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #ff6f61; /* Coral highlight on hover */
+}
+
+.floral-divider {
+    margin: 20px 0;
+    text-align: center;
+    background-color: transparent; /* Ensure the background is transparent */
+    padding: 0; /* Remove any default padding */
+}
+
+.floral-divider img {
+    max-width: 150px;
+    height: auto;
+    display: block; /* Make the image a block element for better centering */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+.footer-bottom {
+    background-color: #f1f1f1;
+    padding: 10px 0;
+    color: #555;
+}
+
+.footer-bottom p {
+    margin-bottom: 0;
+}
+
+/* Extra styling for responsiveness */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .search-form {
+        margin-top: 10px;
+    }
+
+    .product-card img {
+        height: auto;
+    }
+
+    .testimonial-card {
+        margin-bottom: 30px;
+    }
+}
+
+/* Welcome section */
+.welcome-section {
+    background-color: #ffebf0;
+    color: #333;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.welcome-section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.welcome-section p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Contact form */
+.contact-section {
+    padding: 60px 20px;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ff6f61;
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Signup and Login Form Styles */
+.form-container {
+    max-width: 500px; /* Maximum width for the form container */
+    margin: 50px auto; /* Center the form */
+    padding: 30px; /* Padding around the form */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.form-container h2 {
+    text-align: center; /* Center the title */
+    color: #ff6f61; /* Coral color for the title */
+    margin-bottom: 20px; /* Space below the title */
+    font-family: 'Georgia', serif; /* Elegant font for the title */
+    font-size: 2rem; /* Increase font size for better visibility */
+    font-weight: bold; /* Bold title */
+}
+
+.form-container .form-label {
+    font-weight: bold; /* Bold labels */
+}
+
+.form-container .form-control {
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 5px; /* Rounded input corners */
+    padding: 12px; /* Increased padding inside inputs */
+    font-size: 1rem; /* Font size for inputs */
+    margin-bottom: 15px; /* Space between inputs */
+    transition: border-color 0.3s ease; /* Smooth border transition */
+}
+
+.form-container .form-control:focus {
+    border-color: #ff6f61; /* Coral color on focus */
+    box-shadow: 0 0 5px rgba(255, 111, 97, 0.5); /* Soft shadow on focus */
+}
+
+.form-container button {
+    background-color: #ff6f61; /* Coral button background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 12px; /* Button padding */
+    border-radius: 5px; /* Rounded button corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1rem; /* Font size for button */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.form-container button:hover {
+    background-color: #e6554f; /* Darker coral on hover */
+}
+
+/* Utility Classes */
+.text-coral {
+    color: #ff6f61; /* Coral text color */
+}
+
+.text-center {
+    text-align: center; /* Center text */
+}
+
+.mt-4 {
+    margin-top: 1.5rem; /* Top margin utility */
+}
+
+.reviews-section .card {
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition */
+}
+
+.reviews-section .card:hover {
+    transform: scale(1.05); /* Slightly scale up */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Add a shadow */
+}
+
+.product-card, .reviews-card {
+    background-color: #fff; /* White background for cards */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-bottom: 20px; /* Space between cards */
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.product-card {
+    position: relative;
+    overflow: hidden; /* Ensures content doesn't overflow */
+    border: 1px solid #e0e0e0; /* Light border for the product card */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.product-image {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintains aspect ratio */
+    border-bottom: 1px solid #e0e0e0; /* Border between image and content */
+    object-fit: contain; /* Ensures the image covers the area without distortion */
+}
+
+.product-description {
+    padding: 15px; /* Padding for the content area */
+}
+
+@media (min-width: 768px) {
+    .product-image {
+        height: 300px; /* Fixed height for larger screens */
+    }
+}

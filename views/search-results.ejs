@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+<% if (product) { %>
+<%= product.name %>
+<% } else { %>
+Search Results
+<% } %>
+</title>
+<link href="(link unavailable)" rel="stylesheet">
 </head>
 <body>
-    <%- include('partials/header') %>
-
-    <main class="container mt-4">
-        <h1><%= title %></h1>
-        <p>Search results for: "<%= query %>"</p>
-
-        <% if (products.length === 0) { %>
-            <p>No products found matching your search.</p>
-        <% } else { %>
-            <div class="row">
-                <% products.forEach(product => { %>
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="<%= product.image_url %>" class="card-img-top" alt="<%= product.name %>">
-                            <div class="card-body">
-                                <h5 class="card-title"><%= product.name %></h5>
-                                <p class="card-text"><%= product.description %></p>
-                                <p class="card-text"><strong>Price: $<%= Number(product.price).toFixed(2) %></strong></p>
-                                <a href="/products/<%= product.id %>" class="btn btn-primary">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                <% }); %>
-            </div>
-        <% } %>
-    </main>
-
-    <%- include('partials/footer') %>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/main.js"></script>
+<header>
+<%- include('partials/header') %>
+</header>
+<main class="container mt-4">
+<% if (product) { %>
+<h1><%= product.name %></h1>
+<img src="<%= product.image_url %>" class="img-fluid" alt="<%= product.name %>">
+<p><strong>Price: $<%= Number(product.price).toFixed(2) %></strong></p>
+<p><%= product.description %></p>
+<a href="/search" class="btn btn-secondary">Back to Search</a>
+<% } else if (results && results.length > 0) { %>
+<h1>Search Results</h1>
+<ul>
+<% results.forEach((result) => { %>
+<li>
+<a href="/product/<%= result.id %>">
+<%= result.name %>
+</a>
+</li>
+<% }); %>
+</ul>
+<% } else { %>
+<h1>No Results Found</h1>
+<p>No products found matching your search for "<%= query %>."</p>
+<a href="/search" class="btn btn-secondary">Try Again</a>
+<% } %>
+</main>
+<%- include('partials/footer') %>
 </body>
 </html>

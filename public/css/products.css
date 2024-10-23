@@ -1,0 +1,48 @@
+/* Container styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Product card styling */
+.product-card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Product image styling */
+.product-image {
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 1px solid #e9ecef;
+}
+
+/* Price tag styling */
+.price-tag {
+    font-size: 1.2rem;
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Pagination styling */
+.pagination .page-item.active .page-link {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.pagination .page-link {
+    color: #28a745;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .product-image {
+        height: 200px;
+    }
+}

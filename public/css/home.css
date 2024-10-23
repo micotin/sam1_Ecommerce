@@ -1,0 +1,51 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #f8f9fa;
+}
+
+.hero h1 {
+    font-weight: bold;
+}
+
+.hero .btn {
+    background-color: #0069d9;
+    border: none;
+}
+
+/* Featured Section */
+.featured-products .card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.featured-products .card:hover {
+    transform: scale(1.05);
+}
+
+/* Gallery Section */
+.gallery img {
+    transition: all 0.3s ease-in-out;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+/* Call to Action */
+.cta {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cta .btn {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+
+.navbar {
+    margin-bottom: 20px;
+}
