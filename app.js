@@ -1,50 +1,45 @@
 const express = require('express');
 const path = require('path');
-const mysql = require('mysql2');
-const session = require('express-session');
-const db = require('./config/dbConfig');
-
+const db = require('./config/dbcon'); 
 const app = express();
-const port = process.env.PORT || 4000;
+const session = require('express-session');
 
-// Middleware
-app.use(express.static(path.join(__dirname, 'public')));
+const userController = require('./controller/userController');
+const homeController = require('./controller/homeController');
+
+// Set up views and public static files
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Set up session middleware
 app.use(session({
-  secret: 'your_session_secret',
-  resave: false,
-  saveUninitialized: true
+    secret: 'your_secret_key', 
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false } // Set to true if using HTTPS
 }));
 
-app.use(session({
-  secret: 'your_secret_key',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: false }  // Change this to true when using HTTPS
-}));
+// Routes
+const homeRoutes = require('./routes/home');
+const productRoutes = require('./routes/products');
+const userRoutes = require('./routes/user');
+const searchRoutes = require('./routes/search');
 
-// Set view engine
-app.set('view engine', 'ejs');
+// Use routes
+app.use('/', homeRoutes); 
+app.use('/products', productRoutes); 
+app.use('/', userRoutes); 
+app.use('/search', searchRoutes);
 
+// User authentication routes
+app.post('/signup', userController.signup);
+app.post('/login', userController.login);
 
-
-const galleryRoutes = require('./routes/gallery');
-const contactRoutes = require('./routes/contact');
-const aboutRoutes = require('./routes/about');
-const cartRoutes = require('./routes/cart');
-const checkoutRoutes = require('./routes/checkout');
-
-
-app.use('/gallery', galleryRoutes);
-app.use('/contact', contactRoutes);
-app.use('/about', aboutRoutes);
-app.use('/cart', cartRoutes);
-app.use('/checkout', checkoutRoutes);
-
-
-
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+// Listen on port 3000
+app.listen(3000, () => {
+    console.log('Server initiated at http://localhost:3000');
 });
